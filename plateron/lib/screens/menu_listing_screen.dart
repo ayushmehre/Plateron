@@ -15,8 +15,9 @@ class MenuListingScreen extends StatefulWidget {
 class _MenuListingScreenState extends State<MenuListingScreen> {
   @override
   void initState() {
-    var productsProvider = Provider.of<ProductProvider>(context, listen: false);
-    productsProvider.fetchProducts();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<ProductProvider>(context, listen: false).fetchProducts();
+    });
     super.initState();
   }
 

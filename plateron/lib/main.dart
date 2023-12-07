@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => ProductProvider(ProductRepository()),
-        ), // Move the ProductProvider here
+        ),
       ],
       child: MaterialApp(
         routes: {
